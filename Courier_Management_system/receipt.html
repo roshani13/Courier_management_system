@@ -1,0 +1,191 @@
+<html>
+<head>
+
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/jquery.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+
+   <link rel="stylesheet" href="./css/bootstrap.css">
+       <script type="text/javascript" src="./js/jquery.js"></script>
+       <script type="text/javascript">
+          $(document).ready(function () {
+            $("#cancel").click(function () {
+                 window.location="newhome.php";
+           });
+          });
+       </script>
+       <script type="text/javascript">
+          $(document).ready(function () {
+            $("#save").click(function () {
+               var Transport way = $("#Transport way").val();
+               var Name=$("#Name").val();
+               var To address=$("#To address").val();
+               var From address=$("#From address").val();
+               var Office addr=$("#Office addr").val();
+               var office pin=$("#office pin").val();
+               var mobile no=$("#mobile no").val();
+               var data1="Transport way="+Transport way+"&Name="+Name+"&To address="+To address+"&From address="+From address+"&Office addr="+Office addr+"&office pin="+office pin+"&mobile no="+mobile no;
+               $.ajax({
+                            url:"receipt.php",
+                            data:data1,
+                            success: function(result){
+                                alert(result);
+                              $("#Transport way").val("");
+                              $("#Name").val("");
+                              $("#To address").val("");
+                              $("#From address").val("");
+                              $("#Office addr").val("");
+                              $("#office pin").val("");
+                              $("#mobile no").val("");
+
+                            } 
+              });
+            });
+         });
+       </script>
+  
+
+</head>
+<body style="background-color:cornsilk">
+
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="newhome.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-briefcase"></span>Admin Menu<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="regform.html">Courier Registration Form</a></li>
+            <li><a href="Update.html">Courier Update</a></li>
+            <li><a href="delete.html">Courier Delete</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-briefcase"></span>Client Menu<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="courierform.html">Courier Receive Form</a></li>
+            <li><a href="track.html">Courier Status</a></li>
+            <li><a href="receipt.html">Courier Delivered</a></li>
+          </ul>
+        </li>
+        <li><a href="track.html"><span class="glyphicon glyphicon-leaf"></span> Tracking</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
+        <li><a href="firstpage.html"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<div clas="row">
+
+<div class="col-sm-1">
+1</div>
+
+<div class="col-sm-10">
+<FORM class="form-horizontal" role="form">
+ <b><h2 style="color:maroon; text-align:center">Receipt</b></h2>
+ 
+ 
+       
+  <div class="col-sm-8">
+
+   <div class="form-group">
+      <h5><label class="control-label  col-sm-6" for="Transport Way">Transport Way:</label></h5>
+      <div class="col-sm-6">
+       <select name="Transport" class="form-control">
+       <option value="fgn-AIR">fgn-AIR</option>
+       <option value="Railway">Railway</option>
+       <option value="Ship">Ship</option>
+       <option value="BUs">Bus</option>
+      </select>
+      </div>
+      </div><br>
+      
+  <div class="form-group">
+    <label class="control-label col-sm-6" for="Name">Name:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Name" placeholder="Enter Name">
+    </div><br><br><br>
+  </div>
+  
+
+  <div class="form-group">
+    <label class="control-label col-sm-6" for="To Address">To Address:</label>
+     <div class="col-sm-6">
+      <TEXTAREA width=300 height=400 name=Address class="form-control" id="Address" placeholder="Enter Address"></TEXTAREA>
+     </div><br><br><br>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-6" for="From Address">From Address:</label>
+     <div class="col-sm-6">
+      <TEXTAREA width=300 height=400 name=Address class="form-control" id="Address" placeholder="Enter Address"></TEXTAREA>
+     </div><br><br><br>
+  </div>
+
+   <div class="form-group">
+    <label class="control-label col-sm-6" for="Office">Office Addr:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Office" placeholder="Enter Office">
+    </div><br><br><br>
+  </div>
+ 
+   <div class="form-group">
+    <label class="control-label col-sm-6" for="Pin">Office Pin:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Pin" placeholder="Enter Pin">
+    </div><br><br><br>
+  </div>
+     
+   <div class="form-group">
+    <label class="control-label col-sm-6" for="Mobile No">Mobile No:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Mobile No" placeholder="Mobile No">
+    </div><br><br><br>
+  </div>
+
+  
+<p align="center"><button type="Print" class="btn btn-primary btn-lg">Print</button>&nbsp&nbsp
+ &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="Cancle" class="btn btn-primary btn-lg" >Cancle</button></p>
+</div>
+  
+  <div class="col-sm-4">
+    <img src="Images/flag.jpg" class="img-responsive" alt="Cinque Terre" width="450" height="300"><br><br><br><br><br><br><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-5" for="Weight">Weight(grms):</label>
+     <div class="col-sm-4">
+      <input type="text" class="form-control" id="Weight" >
+  </div>
+   <div class="col-sm-3">
+  </div>
+ </div><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-5" for="Total Amt">Total Amt:</label>
+     <div class="col-sm-4">
+      <input type="text" class="form-control" id="Total Amt" >
+  </div>
+  <div class="col-sm-3">
+ </div>
+ 
+</div><br><br>
+</div>
+</form>
+ </div>
+    <div class="col-sm-1">
+   3
+</div>
+</div>
+</body>
+</html>

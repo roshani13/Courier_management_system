@@ -1,0 +1,298 @@
+<html>
+<head>
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/jquery.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="./css/bootstrap.css">
+       <script type="text/javascript" src="./js/jquery.js"></script>
+       <script type="text/javascript">
+          $(document).ready(function () {
+            $("#cancel").click(function () {
+                 window.location="newhome.php";
+           });
+          });
+       </script>
+       <script type="text/javascript">
+          $(document).ready(function () {
+            $("#save").click(function () {
+               var Entry number = $("#Entrynumber").val();
+               var Prepaid Model Rs=$("#PrepaidModelRs").val();
+               var Weight(grams)=$("#Weight(grams)").val();
+               var Name=$("#Name").val();
+               var Address=$("#Address").val();
+               var Email=$("#Email").val();
+               var Contact No=$("#ContactNo").val();
+               var Name=$("#Name").val();
+               var Address=$("#Address").val();
+               var PO Name=$("#POname").val();
+               var Pin code=$("#Pincode").val();
+               var City=$("#City").val();
+               var DOR=$("#DOR").val();
+               var Speed Post=$("#SpeedPost").val();
+               var Service Tax=$("#ServiceTax").val();
+               var Total Amt=$("#TotalAmt").val();
+               var Net Amt=$("#NetAmt").val();
+               var data1="Entry number="+Entrynumber+"&Prepaid Model Rs="+PrepaidModelRs"&Weight="+Weight+"&Name="+Name+"&Address="+Address+"&Email="+Email+"&Contact No="+ContactNo+"&Name="+Name+"&Address="+Address+"&PO Name="+POName+"&Pin Code="+PinCode"&City="+City"&DOR="+DOR"&Speed Post="+SpeedPost"&Service Tax="+ServiceTax"&Total Amt="+TotalAmt"&Net Amt="+NetAmt";
+               $.ajax({
+                            url:"record2.php",
+                            data:data1,
+                            success: function(result){
+                                alert(result);
+                              $("#Entrynumber").val("");
+                              $("#PrepaidModelRs").val("");
+                              $("#Weight(grams)").val("");
+                              $("#Name").val("");
+                              $("#Address").val("");
+                              $("#Email").val("");
+                              $("#ContactNo").val("");
+                              $("#Name").val("");
+                              $("#Address").val("");
+                              $("#POName").val("");
+                              $("#PinCode").val("");
+                              $("#City").val("");
+                              $("#DOR").val("");
+                              $("#SpeedPost").val("");
+                              $("#ServiceTax").val("");
+                              $("#TotalAmt").val("");
+                              $("#NetAmt").val("");
+                              
+                              
+                            } 
+              });
+            });
+         });
+       </script>
+</head>
+<body style="background-color:lavender">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="newhome.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-briefcase"></span>Admin Menu<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="regform.html">Courier Registration Form</a></li>
+            <li><a href="Update.html">Courier Update</a></li>
+            <li><a href="delete.html">Courier Delete</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-briefcase"></span>Client Menu<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="courierform.html">Courier Receive Form</a></li>
+            <li><a href="track.html">Courier Status</a></li>
+            <li><a href="receipt.html">Courier Delivered</a></li>
+          </ul>
+        </li>
+        <li><a href="track.html"><span class="glyphicon glyphicon-leaf"></span> Tracking</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
+        <li><a href="firstpage.html"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+<div clas="row">
+<b><h2 style="color:crimson;text-align:center">Registration Form</b></h2><br>
+      
+<div class="col-sm-8">
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="Entry Number">Entry Number:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Entry Number" placeholder="Enter Number">
+  </div>
+  </div>
+  <div class="col-sm-3">
+   </div><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="Prepaid Model Rs">Prepaid Model Rs:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Prepaid Model Rs" placeholder="Enter Rs">
+  </div>
+ </div>
+  <div class="col-sm-3">
+ </div><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="weight(grams)">weight(grams):</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="weight(grams)" placeholder="Enter weight">
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br>
+
+   <b><h4 style="color:mediumvioletred">*FORM ADDRESS:</b></h4>
+   <div class="form-group">
+    <label class="control-label col-sm-3" for="Name">Name:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Name" placeholder="Enter Name">
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="Address">Address:</label>
+     <div class="col-sm-6">
+      <TEXTAREA width=300 height=400 name=Address class="form-control" id="Address" placeholder="Enter Address"></TEXTAREA>
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="Email">Email:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Email" placeholder="Enter Email Address">
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="Contact No">Contact No:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Contact No" placeholder="Enter Contact No">
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br><br>
+
+<b><h4 style="color:mediumvioletred">*TO ADDRESS:</b></h4>
+   <div class="form-group">
+    <label class="control-label col-sm-3" for="Name">Name:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Name" placeholder="Enter Name">
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="Address">Address:</label>
+     <div class="col-sm-6">
+      <TEXTAREA width=300 height=400 name=Address class="form-control" id="Address" placeholder="Enter Address"></TEXTAREA>
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="PO Name">PO Name:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="PO Name" placeholder="Enter post office Name">
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="Pin code">Pin code:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="Pin code" placeholder="Enter Pin code">
+  </div>
+ </div>
+  <div class="col-sm-3">
+    </div><br><br><br><br>
+      
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   <a href="receipt.html"><button type="Print" class="btn btn-success btn-lg ">Save</a></button>&nbsp&nbsp&nbsp&nbsp
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a href="newhome.php"><button type="Cancle" class="btn btn-success btn-lg ">Cancle</a></button>&nbsp&nbsp&nbsp&nbsp
+   
+</div>
+ 
+  
+    
+<div class="col-sm-4">
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="City">City:</label>
+     <div class="col-sm-6">
+      <input type="text" class="form-control" id="City" placeholder="Enter City">
+  </div>
+   <div class="col-sm-3">
+  </div>
+ </div><br><br><br>
+
+    <div class="form-group">
+   <!--date of registration-->
+    <label class="control-label col-sm-2" for="DOR">DOR:</label>
+     <div class="col-sm-8">
+      <input type="date" class="form-control" id="date" placeholder="dd/mm/yyyy">
+  </div>
+  <div class="col-sm-2">
+  </div>
+ </div><br><br><br>
+
+   <b><h4 style="color:mediumvioletred">*Tariff Calculated:</b></h4>
+
+   <div class="form-group">
+    <label class="control-label col-sm-5" for="Speed Post">Speed Post:</label>
+     <div class="col-sm-4">
+      <input type="text" class="form-control" id="Speed Post" >
+  </div>
+   <div class="col-sm-3">
+  </div>
+ </div><br><br>
+
+  <div class="form-group">
+    <label class="control-label col-sm-5" for="Service Tax">Service Tax:</label>
+     <div class="col-sm-4">
+      <input type="text" class="form-control" id="Service Tax" >
+  </div>
+   <div class="col-sm-3">
+  </div>
+   </div><br><br>
+   
+  <div class="form-group">
+    <label class="control-label col-sm-5" for="Total Amt">Total Amt:</label>
+     <div class="col-sm-4">
+      <input type="text" class="form-control" id="Total Amt" >
+  </div>
+   <div class="col-sm-3">
+  </div>
+ </div><br><br>
+ 
+   <div class="form-group">
+    <label class="control-label col-sm-5" for="Net Amt">Net Amt:</label>
+     <div class="col-sm-4">
+      <input type="text" class="form-control" id="Net Amt" >
+  </div>
+   <div class="col-sm-3">
+  </div>
+ </div><br><br>
+
+ <div class="form-group">
+ <div class="col-sm-11">
+   <div style="border-style:solid; padding-left:10px"> 
+   <b><h4 style="color:mediumvioletred">Collect Money:</b></h4><br><br><br><br>
+    </div>
+   </div>
+  <div class="col-sm-1">
+  </div>
+ </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br>
+
+</div>
+</div>
+</div>
+                   
+  
+
+</body>
+</html>
